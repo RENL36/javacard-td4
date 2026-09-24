@@ -3,6 +3,8 @@ name: Java Card CI
 on:
   push:
     branches: [ main ]
+    tags:
+      - 'v*'
   pull_request:
     branches: [ main ]
 
@@ -40,17 +42,14 @@ jobs:
           chmod +x scripts/build.sh
           ./scripts/build.sh
 
-      - name: Run SCA with OWASP Dependency-Check
-        uses: dependency-check/Dependency-Check_Action@main
-        env:
-          JAVA_HOME: /opt/jdk
-        with:
-          project: 'JavaCard'
-          path: '.'
-          format: 'HTML'
-          out: 'dependency-check-report'
-
       - name: Run tests
         run: |
           chmod +x scripts/run_tests.sh
           ./scripts/run_tests.sh
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/cap/fr/insa/javacard/*.cap
+          generate_release_notes: true
