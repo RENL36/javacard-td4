@@ -1,12 +1,12 @@
 Projet de Java Card.
--> L'objectif est de développer et tester une applet Java Card capable de recevoir des commandes APDU et de retourner le message Hello World.
+* L'objectif est de développer et tester une applet Java Card capable de recevoir des commandes APDU et de retourner le message Hello World.
 
 Structure
-src/ → Code source Java Card 
-scripts/ → Compilation et tests 
-tests/ → Tests APDU 
-lib/ → Dépendances 
-Dockerfile → Environnement Docker
+* src/ → Code source Java Card 
+* scripts/ → Compilation et tests 
+* tests/ → Tests APDU 
+* lib/ → Dépendances 
+* Dockerfile → Environnement Docker
 
 Prérequis
 * Java 17
@@ -14,12 +14,10 @@ Prérequis
 * Docker (optionnel)
 
 Compilation 
-./scripts/build.sh
-Le script compile l'applet et génère le fichier .cap.
+* ./scripts/build.sh -> Le script compile l'applet et génère le fichier .cap.
 
 Tests
-./scripts/run_tests.sh
-Les tests utilisent CREF et APDUTool pour simuler une carte Java Card et envoyer les commandes APDU.
+* ./scripts/run_tests.sh -> Les tests utilisent CREF et APDUTool pour simuler une carte Java Card et envoyer les commandes APDU.
 
 Docker
 * Construire l'image :
