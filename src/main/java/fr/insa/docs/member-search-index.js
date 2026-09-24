@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"fr.insa","c":"HelloWorldApplet","l":"install(byte[], short, byte)","url":"install(byte[],short,byte)"},{"p":"fr.insa","c":"HelloWorldApplet","l":"process(APDU)","url":"process(javacard.framework.APDU)"}]
